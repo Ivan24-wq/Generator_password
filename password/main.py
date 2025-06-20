@@ -38,6 +38,10 @@ class Password(BoxLayout):
         btn_change_theme = MDFlatButton(text="Сменить тему", on_release=lambda x: self.change_theme())
         box.add_widget(label)
         box.add_widget(btn_change_theme)
+        
+        btn_change_language = MDFlatButton(text="Сменить язык", on_release=lambda x: self.change_language())
+        box.add_widget(label)
+        box.add_widget(btn_change_language)
 
         popup = Popup(
             title = 'Настройки', 
