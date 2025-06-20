@@ -14,7 +14,7 @@ from kivymd.uix.button import MDFlatButton
     
 Window.clearcolor = (0.56, 0.93, 0.56, 1)
 Builder.load_file("password.kv")
-class Password(BoxLayout):
+class Password(MDBoxLayout):
 # generation password
     def generation_password(self, num):
         if num < 2:
@@ -38,11 +38,6 @@ class Password(BoxLayout):
         btn_change_theme = MDFlatButton(text="Сменить тему", on_release=lambda x: self.change_theme())
         box.add_widget(label)
         box.add_widget(btn_change_theme)
-        
-        btn_change_language = MDFlatButton(text="Сменить язык", on_release=lambda x: self.change_language())
-        box.add_widget(label)
-        box.add_widget(btn_change_language)
-
         popup = Popup(
             title = 'Настройки', 
             content = box,
@@ -59,7 +54,7 @@ class Password(BoxLayout):
 
 class MyApp(MDApp):
     def build(self):
-        self.theme_cls.theme_styles = "Light"
+        self.theme_cls.theme_style = "Light"
         return Password()
 if __name__ == "__main__":
     MyApp().run()
